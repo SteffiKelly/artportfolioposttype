@@ -6,8 +6,8 @@
 * Version:       1.0
 * Author:        Steffi Kelly
 * Author URI:    https://steffikelly.com
-* Text Domain: sk21
-* Domain Path: /languages
+* Text Domain: 	sk21
+* Domain Path: 	/languages
 */
 
 function sk21_create_art_post_type() {
@@ -28,7 +28,7 @@ function sk21_create_art_post_type() {
 		'has_archive' => true,
 		'public' => true,
 		'hierarchical' => false,
-		'rewrite' => array( 'slug' => 'art-project' ),
+		'rewrite' => array( 'slug' => 'art-practice' ),
 		'supports' => array(
 			'title',
 			'editor',
@@ -39,7 +39,7 @@ function sk21_create_art_post_type() {
 		),
 		'taxonomies' => array( 'post_tag', 'category'),
 	);
-	register_post_type( 'art-project', $args );
+	register_post_type( 'art-practice', $args );
 }
 add_action( 'init', 'sk21_create_art_post_type' );
 
@@ -66,7 +66,7 @@ function sk21_register_medium_taxonomy() {
 		'show_admin_column' => true
 	);
 
-	register_taxonomy( 'medium', array( 'post', 'art-project' ), $args);
+	register_taxonomy( 'medium', array( 'post', 'art-practice' ), $args);
 
 }
 add_action( 'init', 'sk21_register_medium_taxonomy' );
